@@ -67,7 +67,8 @@
 									<table class="preview-table">
 										<tbody>
 											<tr>
-												<th colspan="4"><img src="./assets/moors_project/team-icon.png" alt="">团队组建
+												<th colspan="4"><img src="./assets/moors_project/team-icon.png"
+														alt="">团队组建
 												</th>
 											</tr>
 											<tr ng-repeat="member in memberList" class="ng-scope">
@@ -163,7 +164,8 @@
                         $index == 0 &amp;&amp; (research.status === &#39;RESEARCH_PLAN_CHECKING&#39; &amp;&amp; uProfile.authorities[0] === &#39;ROLE_Middle_Teacher&#39; || researchPlanCheckList.length &gt; 0) ||
                         $index == 2 &amp;&amp; (research.status === &#39;RESEARCH_COMPLETING&#39; &amp;&amp; uProfile.authorities[0] === &#39;ROLE_Middle_Teacher&#39; || researchCompletedCheckList.length &gt; 0)
                         " class="ng-scope">
-												<th colspan="4"><img src="./assets/moors_project/t-audit.png" alt="">指导教师审核
+												<th colspan="4"><img src="./assets/moors_project/t-audit.png"
+														alt="">指导教师审核
 												</th>
 											</tr>
 											<tr ng-if="$parent.$index == 0" ng-repeat="plan in researchPlanCheckList"
@@ -173,117 +175,95 @@
 													class="ng-binding">张仲炎</td>
 												<td style="width: 100px; text-align: center">审核</td>
 												<td style="color: #538ca6">
-													<div class="table-handle-warpper"><!-- ngIf: plan.adopted --><span
+													<div class="table-handle-warpper"><span
 															class="pass-icon pass ng-scope"
-															ng-if="plan.adopted">通过</span><!-- end ngIf: plan.adopted -->
-														<!-- ngIf: !plan.adopted --><!-- ngIf: plan.edit --><!-- ngIf: !plan.edit -->
+															ng-if="plan.adopted">通过</span>
 														<div ng-if="!plan.edit" class="ng-binding ng-scope">
 															注意撰写一下为什么要研究做这个的目的，建议从方程的特质考虑，尤其是一元二次方程与之后的二次函数的关联，要不要考虑最值问题，建议可以做适当的延伸。
-														</div><!-- end ngIf: !plan.edit -->
-														<div><!-- ngIf: plan.edit -->
-															<!-- ngIf: !plan.edit && uProfile.authorities[0] === 'ROLE_Middle_Teacher' -->
 														</div>
 													</div>
 												</td>
 											</tr>
-											<!-- end ngIf: $parent.$index == 0 --><!-- end ngRepeat: plan in researchPlanCheckList --><!-- ngIf: $index == 0 && research.status === 'RESEARCH_PLAN_CHECKING' && uProfile.authorities[0] === 'ROLE_Middle_Teacher' --><!-- 第4步审核 --><!-- ngRepeat: plan in researchCompletedCheckList --><!-- ngIf: $parent.$index == 2 --><!-- end ngRepeat: plan in researchCompletedCheckList --><!-- ngIf: $index == 2 && research.status === 'RESEARCH_COMPLETING_CHECKING' && uProfile.authorities[0] === 'ROLE_Middle_Teacher' -->
 											<tr ng-repeat-end="" class="ng-scope"></tr>
-											<!-- end ngRepeat: step in shameData --><!-- ngIf: $index ==0 || stepOrder > 2 -->
 											<tr ng-repeat-start="step in shameData"
 												ng-if="$index ==0 || stepOrder &gt; 2" class="ng-scope">
 												<th colspan="4" class="ng-binding"><img
 														ng-src="./img/middle/step-icon2.png" alt=""
 														src="./assets/moors_project/step-icon2.png">课题实施</th>
 											</tr>
-											<!-- end ngIf: $index ==0 || stepOrder > 2 --><!-- ngRepeat: note in step.json --><!-- ngIf: $parent.$index ==0 || stepOrder > 2 -->
 											<tr ng-repeat="note in step.json"
 												ng-if="$parent.$index ==0 || stepOrder &gt; 2" class="ng-scope">
 												<td colspan="2" style="text-align: left; width: 240px"
 													class="ng-binding">具体操作方案(如调查问卷、访谈提纲、实验方案、工程草图、文学创作构思等)</td>
-												<!-- ngIf: note.type !== 'checkbox' &&note.type !=='checkbox_text'&& note.type !=='checkbox_attachment'&& note.type !=='rich_text' --><!-- ngIf: note.type ==='checkbox_text'|| note.type ==='checkbox_attachment' --><!-- ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'rich_text' -->
 												<td colspan="2" style="text-align: left; color: #538ca6"
 													ng-if="note.type == &#39;rich_text&#39;" class="ng-scope">
-															title="1732203428779030938.png" alt="运行流程.png"></p>
+													title="1732203428779030938.png" alt="运行流程.png"></p>
 													<p>如图为程序大致的运行流程，源代码请见原始数据。</p>
 													</span>
-												</td><!-- end ngIf: note.type == 'rich_text' -->
+												</td>
 											</tr>
-											<!-- end ngIf: $parent.$index ==0 || stepOrder > 2 --><!-- end ngRepeat: note in step.json --><!-- ngIf: $parent.$index ==0 || stepOrder > 2 -->
 											<tr ng-repeat="note in step.json"
 												ng-if="$parent.$index ==0 || stepOrder &gt; 2" class="ng-scope">
 												<td colspan="2" style="text-align: left; width: 240px"
 													class="ng-binding">参考资料</td>
-												<!-- ngIf: note.type !== 'checkbox' &&note.type !=='checkbox_text'&& note.type !=='checkbox_attachment'&& note.type !=='rich_text' -->
 												<td colspan="2" style="text-align: left; color: #538ca6"
 													ng-class="{&#39;table-file&#39;: note.type == &#39;attachment&#39;}"
 													ng-if="note.type !== &#39;checkbox&#39; &amp;&amp;note.type !==&#39;checkbox_text&#39;&amp;&amp; note.type !==&#39;checkbox_attachment&#39;&amp;&amp; note.type !==&#39;rich_text&#39;"
 													class="ng-binding ng-scope">[1] Ning-H.[AHOI 2018初中组] 根式化简
 													题解.[EB/OL].https://www.cnblogs.com/Ning-H/p/11581108.html
-													<!-- ngIf: researchObj[note.key+ 'Id'] --><!-- ngIf: note.type == 'text' && note.key =='learningExperience' -->
 												</td>
-												<!-- end ngIf: note.type !== 'checkbox' &&note.type !=='checkbox_text'&& note.type !=='checkbox_attachment'&& note.type !=='rich_text' --><!-- ngIf: note.type ==='checkbox_text'|| note.type ==='checkbox_attachment' --><!-- ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'rich_text' -->
 											</tr>
-											<!-- end ngIf: $parent.$index ==0 || stepOrder > 2 --><!-- end ngRepeat: note in step.json --><!-- ngIf: $parent.$index ==0 || stepOrder > 2 -->
 											<tr ng-repeat="note in step.json"
 												ng-if="$parent.$index ==0 || stepOrder &gt; 2" class="ng-scope">
 												<td colspan="2" style="text-align: left; width: 240px"
 													class="ng-binding">原始数据</td>
-												<!-- ngIf: note.type !== 'checkbox' &&note.type !=='checkbox_text'&& note.type !=='checkbox_attachment'&& note.type !=='rich_text' --><!-- ngIf: note.type ==='checkbox_text'|| note.type ==='checkbox_attachment' -->
 												<td colspan="2" style="text-align: left; color: #538ca6"
 													ng-if="note.type ===&#39;checkbox_text&#39;|| note.type ===&#39;checkbox_attachment&#39;"
 													class="ng-scope"><research-format
 														content="[{&quot;key&quot;:&quot;qt&quot;,&quot;value&quot;:&quot;其它&quot;,&quot;fileId&quot;:&quot;285b7ed8-0a45-4108-9d82-dc7e25330f74&quot;,&quot;size&quot;:&quot;9917&quot;,&quot;childContent&quot;:&quot;quadratic_equation.cpp&quot;}]">
 														<div class="td-div"><span class="td-title">其它：</span><span
 																class="table-file">quadratic_equation.cpp(9.68KB)</span>
-																<a href="./assets/moors_project/quadratic_equation.cpp" download="quadratic_equation.cpp">点击下载</a>
+															<a href="./assets/moors_project/quadratic_equation.cpp"
+																download="quadratic_equation.cpp">点击下载</a>
 														</div>
 													</research-format></td>
-												<!-- end ngIf: note.type ==='checkbox_text'|| note.type ==='checkbox_attachment' --><!-- ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'rich_text' -->
 											</tr>
-											<!-- end ngIf: $parent.$index ==0 || stepOrder > 2 --><!-- end ngRepeat: note in step.json --><!-- ngIf: $parent.$index ==0 || stepOrder > 2 -->
 											<tr ng-repeat="note in step.json"
 												ng-if="$parent.$index ==0 || stepOrder &gt; 2" class="ng-scope">
 												<td colspan="2" style="text-align: left; width: 240px"
 													class="ng-binding">研究结论</td>
-												<!-- ngIf: note.type !== 'checkbox' &&note.type !=='checkbox_text'&& note.type !=='checkbox_attachment'&& note.type !=='rich_text' -->
 												<td colspan="2" style="text-align: left; color: #538ca6"
 													ng-class="{&#39;table-file&#39;: note.type == &#39;attachment&#39;}"
 													ng-if="note.type !== &#39;checkbox&#39; &amp;&amp;note.type !==&#39;checkbox_text&#39;&amp;&amp; note.type !==&#39;checkbox_attachment&#39;&amp;&amp; note.type !==&#39;rich_text&#39;"
 													class="ng-binding ng-scope">
-													<!-- ngIf: researchObj[note.key+ 'Id'] --><!-- ngIf: note.type == 'text' && note.key =='learningExperience' -->
 												</td>
-												<!-- end ngIf: note.type !== 'checkbox' &&note.type !=='checkbox_text'&& note.type !=='checkbox_attachment'&& note.type !=='rich_text' --><!-- ngIf: note.type ==='checkbox_text'|| note.type ==='checkbox_attachment' --><!-- ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'rich_text' -->
 											</tr>
 											<tr ng-repeat-end="" class="ng-scope"></tr>
-											<!-- end ngRepeat: step in shameData --><!-- ngIf: $index ==0 || stepOrder > 2 -->
 											<tr ng-repeat-start="step in shameData"
 												ng-if="$index ==0 || stepOrder &gt; 2" class="ng-scope">
 												<th colspan="4" class="ng-binding"><img
 														ng-src="./img/middle/step-icon3.png" alt=""
 														src="./assets/moors_project/step-icon3.png">课题结题</th>
 											</tr>
-											<!-- end ngIf: $index ==0 || stepOrder > 2 --><!-- ngRepeat: note in step.json --><!-- ngIf: $parent.$index ==0 || stepOrder > 2 -->
 											<tr ng-repeat="note in step.json"
 												ng-if="$parent.$index ==0 || stepOrder &gt; 2" class="ng-scope">
 												<td colspan="2" style="text-align: left; width: 240px"
 													class="ng-binding">成果说明</td>
-												<!-- ngIf: note.type !== 'checkbox' &&note.type !=='checkbox_text'&& note.type !=='checkbox_attachment'&& note.type !=='rich_text' --><!-- ngIf: note.type ==='checkbox_text'|| note.type ==='checkbox_attachment' -->
 												<td colspan="2" style="text-align: left; color: #538ca6"
 													ng-if="note.type ===&#39;checkbox_text&#39;|| note.type ===&#39;checkbox_attachment&#39;"
 													class="ng-scope"><research-format
 														content="[{&quot;key&quot;:&quot;SP&quot;,&quot;value&quot;:&quot;视频&quot;,&quot;fileId&quot;:&quot;90ab565c-c8aa-4a3a-b6b7-175965bc7895&quot;,&quot;size&quot;:&quot;3032352&quot;,&quot;childContent&quot;:&quot;操作示例.mp4&quot;}]">
 														<div class="td-div"><span class="td-title">视频：</span><span
 																class="table-file">操作示例.mp4(2.89MB)</span>
-																<a href="./assets/moors_project/操作示例.mp4" download="操作示例.mp4">点击下载</a></div>
+															<a href="./assets/moors_project/操作示例.mp4"
+																download="操作示例.mp4">点击下载</a>
+														</div>
 													</research-format></td>
-												<!-- end ngIf: note.type ==='checkbox_text'|| note.type ==='checkbox_attachment' --><!-- ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'checkbox' && c.key == researchObj[note.key] --><!-- end ngRepeat: c in note.typeArray --><!-- ngIf: note.type == 'rich_text' -->
 											</tr>
-											<!-- end ngIf: $parent.$index ==0 || stepOrder > 2 --><!-- end ngRepeat: note in step.json --><!-- ngIf: $parent.$index ==0 || stepOrder > 2 -->
 											<tr ng-repeat="note in step.json"
 												ng-if="$parent.$index ==0 || stepOrder &gt; 2" class="ng-scope">
 												<td colspan="2" style="text-align: left; width: 240px"
 													class="ng-binding">探究或创作的学习体会与思考</td>
-												<!-- ngIf: note.type !== 'checkbox' &&note.type !=='checkbox_text'&& note.type !=='checkbox_attachment'&& note.type !=='rich_text' -->
 												<td colspan="2" style="text-align: left; color: #538ca6"
 													ng-class="{&#39;table-file&#39;: note.type == &#39;attachment&#39;}"
 													ng-if="note.type !== &#39;checkbox&#39; &amp;&amp;note.type !==&#39;checkbox_text&#39;&amp;&amp; note.type !==&#39;checkbox_attachment&#39;&amp;&amp; note.type !==&#39;rich_text&#39;"
@@ -336,14 +316,16 @@
 													ng-if="note.type !== &#39;checkbox&#39; &amp;&amp;note.type !==&#39;checkbox_text&#39;&amp;&amp; note.type !==&#39;checkbox_attachment&#39;&amp;&amp; note.type !==&#39;rich_text&#39;"
 													class="ng-binding ng-scope table-file">
 													quadratic_equation_win10-11_x86-64.exe.1
-													<a href="./assets/moors_project/quadratic_equation_win10-11_x86-64.exe.1" download="quadratic_equation_win10-11_x86-64.exe.1">点击下载</a>
+													<a href="./assets/moors_project/quadratic_equation_win10-11_x86-64.exe.1"
+														download="quadratic_equation_win10-11_x86-64.exe.1">点击下载</a>
 												</td>
 											</tr>
 											<tr ng-if="
                         $index == 0 &amp;&amp; (research.status === &#39;RESEARCH_PLAN_CHECKING&#39; &amp;&amp; uProfile.authorities[0] === &#39;ROLE_Middle_Teacher&#39; || researchPlanCheckList.length &gt; 0) ||
                         $index == 2 &amp;&amp; (research.status === &#39;RESEARCH_COMPLETING&#39; &amp;&amp; uProfile.authorities[0] === &#39;ROLE_Middle_Teacher&#39; || researchCompletedCheckList.length &gt; 0)
                         " class="ng-scope">
-												<th colspan="4"><img src="./assets/moors_project/t-audit.png" alt="">指导教师审核
+												<th colspan="4"><img src="./assets/moors_project/t-audit.png"
+														alt="">指导教师审核
 												</th>
 											</tr>
 											<tr ng-if="$parent.$index == 2"
@@ -353,13 +335,11 @@
 													class="ng-binding">张仲炎</td>
 												<td style="width: 100px; text-align: center">审核</td>
 												<td style="color: #538ca6">
-													<div class="table-handle-warpper"><!-- ngIf: plan.adopted --><span
+													<div class="table-handle-warpper"><span
 															class="pass-icon pass ng-scope"
-															ng-if="plan.adopted">通过</span><!-- end ngIf: plan.adopted -->
+															ng-if="plan.adopted">通过</span>
 														<div ng-if="!plan.edit" class="ng-binding ng-scope">
 															一个公式、一种工具的产生就是需要服务于用日常应用，整个的程序执行还是较为清晰的，今后可以再结合二次函数的图像，进一步开发，整体的报告清晰，操作界面清晰。
-														</div>
-														<div>
 														</div>
 													</div>
 												</td>
@@ -368,7 +348,8 @@
 											<tr ng-if="(research.status === &#39;RESEARCH_COMMENTING&#39; &amp;&amp; uProfile.authorities[0] === &#39;ROLE_Middle_Teacher&#39;) 
                         || research.status === &#39;RESEARCH_COMMENTED&#39; || research.status === &#39;RESEARCH_FINISH&#39;"
 												class="ng-scope">
-												<th colspan="4"><img src="./assets/moors_project/t-audit.png" alt="">指导教师评价
+												<th colspan="4"><img src="./assets/moors_project/t-audit.png"
+														alt="">指导教师评价
 												</th>
 											</tr>
 											<tr ng-repeat="member in teacherCommentList"
@@ -382,8 +363,6 @@
 													<div class="table-handle-warpper">
 														<div ng-if="!member.edit  &amp;&amp; member.id"
 															class="ng-binding ng-scope">整个思路清晰，程序编写简洁清晰。</div>
-														<div>
-														</div>
 													</div>
 												</td>
 											</tr>
@@ -396,12 +375,8 @@
 												<td style="text-align: center">指导教师的简要评语</td>
 												<td style="color: #538ca6">
 													<div class="table-handle-warpper">
-														<!-- ngIf: member.edit || !member.id --><!-- ngIf: !member.edit  && member.id -->
 														<div ng-if="!member.edit  &amp;&amp; member.id"
 															class="ng-binding ng-scope">整体思路清晰，报告撰写得当。</div>
-														<!-- end ngIf: !member.edit  && member.id -->
-														<div>
-														</div>
 													</div>
 												</td>
 											</tr>
@@ -414,12 +389,6 @@
 				</ng-view></div>
 		</div>
 	</div>
-	<!-- <script src="./assets/moors_project/angular-be6af23e2a.min.js.下载" defer="defer"></script> -->
-	<!-- <script src="./assets/moors_project/angular-resource-ca9fdfda89.min.js.下载" defer="defer"></script> -->
-	<!-- <script src="./assets/moors_project/jquery-710458dd55.min.js.下载" defer="defer"></script> -->
-	<!--angular-ueditor文件，专门提供给angular使用，防止单页面切换的时候编译器不能重新加载-->
-	<!-- <script type="text/javascript" charset="utf-8" src="./assets/moors_project/angular-ueditor.js.下载" defer="defer"></script> -->
-	<!-- <script src="./assets/moors_project/moor-15c788df9e.plug-in.min.js.下载" defer="defer"></script> -->
 	</div>
 </body>
 
